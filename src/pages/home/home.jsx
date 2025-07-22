@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styles from "./home.module.css";
 import { useNavigate } from "react-router-dom";
-import triangle from '../../assets/triangle.png'
 import rightCircle from '../../assets/rightCircle.png'
 import { createShortUrl } from "../../services/url";
 import { alertToast, errorToast } from "../../helper/toast";
@@ -9,16 +8,24 @@ import { alertToast, errorToast } from "../../helper/toast";
 const Home = () => {
     const navigate = useNavigate()
     const [originalUrl, setOriginalUrl] = useState("")
+    const [shortedUrl, setShortedUrl] = useState("Shortened URL will appear here")
+
+    const generateShortUrl = (shortCode) => {
+        return `${import.meta.env.VITE_PLATFORM_URL}/shorta/${shortCode}`
+    }
 
     const shortUrl = async () => {
         if (originalUrl) {
             const res = await createShortUrl({
                 originalUrl: originalUrl
             })
+            console.log(res)
 
-            if (res.status == 200) {
+            if (res.status == 201) {
                 alertToast(res.data.message)
                 setOriginalUrl("")
+                console.log(res.data)
+                setShortedUrl(generateShortUrl(res.data.shortCode))
             } else {
                 errorToast(res.message)
             }
@@ -55,6 +62,9 @@ const Home = () => {
                         value={originalUrl}
                         onChange={(e) => setOriginalUrl(e.target.value)}
                     />
+                    <div className={styles.shortUrlContainer}>
+                        <a href={shortedUrl} target="_blank" rel="noopener noreferrer">{shortedUrl}</a>
+                    </div>
                 </div>
 
                 <button className={styles.ctaButton} onClick={shortUrl}>Shorten</button>

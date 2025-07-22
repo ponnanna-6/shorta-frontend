@@ -7,9 +7,7 @@ import { registerUser } from '../../services/auth'
 import { validateEmail } from '../../helper/utils'
 import GoogleSignInButton from './googleSignInButton'
 import { IoArrowBack } from 'react-icons/io5';
-import triangle from '../../assets/triangle.png'
 import rightCircle from '../../assets/rightCircle.png'
-import bottomCircle from '../../assets/bottonCircle.png'
 
 export default function Register() {
     const navigate = useNavigate()
@@ -136,9 +134,7 @@ export default function Register() {
                 <IoArrowBack className={styles.backIcon} />
             </div>
             <div className={styles.container}>
-                <img src={triangle} alt="" className={styles.triangleImage} />
                 <img src={rightCircle} alt="" className={styles.rightCircleImage} />
-                <img src={bottomCircle} alt="" className={styles.bottomCircleImage} />
                 <div className={styles.formContainer}>
                     <Form
                         formFields={formFields}

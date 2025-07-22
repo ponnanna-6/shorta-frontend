@@ -6,10 +6,8 @@ import { getIdFromToken, validateEmail } from '../../helper/utils'
 import { loginUser } from '../../services/auth'
 import { alertToast, errorToast } from '../../helper/toast'
 import { IoArrowBack } from 'react-icons/io5';
-import triangle from '../../assets/triangle.png'
 import GoogleSignInButton from './googleSignInButton'
 import rightCircle from '../../assets/rightCircle.png'
-import bottomCircle from '../../assets/bottonCircle.png'
 
 export default function Login() {
     const navigate = useNavigate()
@@ -103,7 +101,6 @@ export default function Login() {
                 <IoArrowBack className={styles.backIcon} />
             </div>
             <div className={styles.container}>
-                <img src={triangle} alt="" className={styles.triangleImage} />
                 <img src={rightCircle} alt="" className={styles.rightCircleImage} />
                 <div className={styles.formContainer}>
                     <Form
@@ -124,7 +121,7 @@ export default function Login() {
                     </span>
                 </p>
                 
-                <img src={bottomCircle} alt="" className={styles.bottomCircleImage} />
+
             </div>
         </>
     )

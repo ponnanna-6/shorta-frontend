@@ -4,9 +4,11 @@ export const createShortUrl = async (data) => {
   try {
     const res = await axios.post(`${import.meta.env.VITE_BASE_URL}/url/createShortUrl`, data);
 
+    console.log(res)
     return {
       status: res.status,
-      message: res.data.message
+      message: res.data.message,
+      data: res.data.data
     };
   } catch (error) {
     return {
