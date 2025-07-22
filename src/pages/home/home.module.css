@@ -1,0 +1,103 @@
+/* home.module.css */
+
+.container {
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 60px;
+}
+
+.navButtons {
+    display: flex;
+}
+
+.navButtons button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.signInButton {
+    background-color: transparent;
+    color: #7EA6FF;
+    border: 1px solid #7EA6FF;
+}
+
+.createButton {
+    background-color: var(--button-blue);
+    color: #fff;
+    border: none;
+}
+
+.createButton:hover {
+    background-color: #005bcc;
+}
+
+.main {
+    text-align: center;
+}
+
+.titleContainer {
+    display: flex;
+    margin-bottom: 40px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.titleContainer img {
+    object-fit: contain;
+}
+
+.title {
+    font-size: 56px;
+    font-weight: 800;
+    background: linear-gradient(90deg, #6c63ff 0%, #0073ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    width: 90%;
+}
+
+.subtitle {
+    font-size: 20px;
+    color: #ffffff90;
+    font-weight: 500;
+    width: 80%;
+    text-align: center;
+}
+
+.ctaButton {
+    padding: 15px 40px;
+    background-color: var(--button-blue);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.ctaButton:hover {
+    background-color: #005bcc;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: row;
+    width: 20vw;
+    height: 35px;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    border: 1px solid #D0D0D050;
+}
